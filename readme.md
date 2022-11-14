@@ -6,9 +6,9 @@ _This is a tracking system for Stortinget to build an API to support that the sy
 
 ## HTTP Methods
 
-_GET - Requests retrieve resource information_
-_POST - The server creates a new entry in a database_
-_DELETE - Deletes resource_
+- _GET - Requests retrieve resource information_
+- _POST - The server creates a new entry in a database_
+- _DELETE - Deletes resource_
 
 | Name         | Request type | Endpoint                                                       | Body                                                                      |
 | ------------ | ------------ | -------------------------------------------------------------- | ------------------------------------------------------------------------- |
