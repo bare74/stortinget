@@ -1,8 +1,14 @@
-# _Api_Stortinget_store_
+# _Api_Stortinget_
 
 ## Description
 
-_This is a tracking system for Stortinget to build an API to support that the system will integrate between when items are added to the API and stored on cardID. See documentaion under_
+_This is a tracking system for Stortinget to build an API to support that the system will integrate between when items are added to the API and stored on cardID. See documentation under_
+
+## HTTP Methods
+
+_GET - Requests retrieve resource information_
+_POST - The server creates a new entry in a database_
+_DELETE - Deletes resource_
 
 | Name         | Request type | Endpoint                                                       | Body                                                                      |
 | ------------ | ------------ | -------------------------------------------------------------- | ------------------------------------------------------------------------- |
