@@ -18,6 +18,18 @@ const CREATE_CARD_TABLE =
   "CREATE TABLE if not exists card_table (ID INTEGER PRIMARY KEY AUTOINCREMENT, card_number INT, store TEXT, adress TEXT, date TEXT, items TEXT);";
 const DROP_CARD_TABLE = "DROP TABLE if exists card_table;";
 
+//create new table
+app.get("/create", (req, res) => {
+  db.run(CREATE_CARD_TABLE);
+  res.send("Table created");
+});
+
+//drop table
+app.get("/drop", (req, res) => {
+  db.run(DROP_CARD_TABLE);
+  res.send("Table dropped");
+});
+
 //drop and insert data to database
 app.get("/reset", (req, res) => {
   db.run(DROP_CARD_TABLE, () => {
@@ -25,13 +37,13 @@ app.get("/reset", (req, res) => {
     db.run(CREATE_CARD_TABLE, () => {
       console.log("...and re-created");
       db.run(
-        "INSERT INTO card_table (card_number, store, adress, date, items) VALUES ('1345', 'Kiwi', 'Tønsberg', '12.11.22', '');"
+        "INSERT INTO card_table (card_number, store, adress, date, items) VALUES ('1345', 'Kiwi', 'Tønsberg', '12.11.22', '[{}]');"
       );
       db.run(
-        "INSERT INTO card_table (card_number, store, adress, date, items) VALUES ('1343', 'Rema 1000', 'Tønsberg', '10.11.22', '');"
+        "INSERT INTO card_table (card_number, store, adress, date, items) VALUES ('1343', 'Rema 1000', 'Tønsberg', '10.11.22', '[{}]');"
       );
       db.run(
-        "INSERT INTO card_table (card_number, store, adress, date, items) VALUES ('7890', 'Kiwi', 'Sandefjord', '12.11.22', '');"
+        "INSERT INTO card_table (card_number, store, adress, date, items) VALUES ('7890', 'Kiwi', 'Sandefjord', '12.11.22', '[{}]');"
       );
     });
   });
@@ -116,7 +128,7 @@ app.get("/card/:card_number", (req, res) => {
         if (err) return console.log(err.message);
       },
       () => {
-        res.send(card_number);
+        res.send(JSON.parse(card_number));
       }
     );
   });
@@ -125,7 +137,6 @@ app.get("/card/:card_number", (req, res) => {
 //search on spesific date - 00.00.00
 app.get("/day/:date", (req, res) => {
   let date = [];
-  console.log(`"${req.params.date}"`);
   db.serialize(() => {
     db.each(
       `SELECT * FROM card_table WHERE date = "${req.params.date}"`,

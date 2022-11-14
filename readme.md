@@ -9,7 +9,7 @@
 9. npm install nodemon
    npm install sqlite3
 
-# _{Api_Stortinget_store}_
+# _Api_Stortinget_store_
 
 #### _{B}_
 
@@ -26,20 +26,24 @@
 
 _{This is a detailed description of your application. Give as much detail as needed to explain what the application does as well as any other information you want users or other developers to have.}_
 
-| Name        | Request type | Endpoint                                               | Body                                                                      |
-| ----------- | ------------ | ------------------------------------------------------ | ------------------------------------------------------------------------- |
-| Get All     | GET          | http://localhost:8080                                  |                                                                           |
-|             |              | ITEMS                                                  |                                                                           |
-| Add Items   | POST         | http://localhost:8080/items                            | { item:"string", value:"string", currency:"string", price:"number" }      |
-| Get Items   | GET          | http://localhost:8080/items                            |                                                                           |
-|             |              | CARD                                                   |                                                                           |
-| Add Card    | POST         | http://localhost:8080/card                             | { card_number:"number", store: "string", adress:"string", date:"string" } |
-| Get Card    | GET          | http://localhost:8080/card/:card_number                |                                                                           |
-|             |              | Card number/date/items                                 |                                                                           |
-| Get Data    | GET          | http://localhost:8080/day/:date                        |                                                                           |
-| Get Data    | GET          | http://localhost:8080/month/:month_number/:year_number |                                                                           |
-|             |              | Delete ALL data card                                   |                                                                           |
-| Delete Data | DELETE       | http://localhost:8080/card/:card_number                |                                                                           |
+| Name         | Request type | Endpoint                                               | Body                                                                      |
+| ------------ | ------------ | ------------------------------------------------------ | ------------------------------------------------------------------------- |
+| Get All      | GET          | http://localhost:8080                                  |                                                                           |
+|              |              | ITEMS                                                  |                                                                           |
+| Add Items    | POST         | http://localhost:8080/items                            | { item:"string", value:"string", currency:"string", price:"number" }      |
+| Get Items    | GET          | http://localhost:8080/items                            |                                                                           |
+|              |              | CARD                                                   |                                                                           |
+| Add Card     | POST         | http://localhost:8080/card                             | { card_number:"number", store: "string", adress:"string", date:"string" } |
+| Get Card     | GET          | http://localhost:8080/card/:card_number                |                                                                           |
+|              |              | Card number/date/items                                 |                                                                           |
+| Get Data     | GET          | http://localhost:8080/day/:date                        |                                                                           |
+| Get Data     | GET          | http://localhost:8080/month/:month_number/:year_number |                                                                           |
+|              |              | Delete ALL data card                                   |                                                                           |
+| Delete Data  | DELETE       | http://localhost:8080/card/:card_number                |                                                                           |
+|              |              | CREATE / DROP / RESET TABLE                            |                                                                           |
+| Create table | GET          | http://localhost:8080/create                           |                                                                           |
+| Drop table   | GET          | http://localhost:8080/drop                             |                                                                           |
+| Reset table  | GET          | http://localhost:8080/reset                            |                                                                           |
 
 ## Setup/Installation Requirements
 
