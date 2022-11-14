@@ -52,17 +52,11 @@ Source:www.learnhowtoprogram.com
 1
 Show 1 More Gre
 
-| Name      | Request type | Endpoint                    | Body              |
-| --------- | ------------ | --------------------------- | ----------------- |
-| Get All   | GET          | http://localhost:8080       |                   |
-|           |              | ITEMS                       |                   |
-| Add Items | POST         | http://localhost:8080/items | "item": "string", |
-
-    "value": "string",
-    "currency": "string",
-    "price": number
-
-}
-|Get Items| GET | http://localhost:8080/items | | |
-| | | ITEMS | |
-| | | ITEMS | |
+| Name      | Request type | Endpoint                    | Body                                                                     |
+| --------- | ------------ | --------------------------- | ------------------------------------------------------------------------ |
+| Get All   | GET          | http://localhost:8080       |                                                                          |
+|           |              | ITEMS                       |                                                                          |
+| Add Items | POST         | http://localhost:8080/items | "item": "string","value": "string","currency": "string","price": number} |
+| Get Items | GET          | http://localhost:8080/items |                                                                          |
+|           |              | ITEMS                       |                                                                          |
+|           |              | ITEMS                       |                                                                          |
