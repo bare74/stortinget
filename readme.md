@@ -54,5 +54,5 @@ Show 1 More Gre
 
 | Name      | Request type | Endpoint | Body |
 | --------- | ------------ | -------- | ---- |
-| -         | -            | ITEMS    | -    |
+|           |              | ITEMS    |      |
 | Add Items | -            | ITEMS    | -    |
