@@ -51,7 +51,7 @@ app.get("/reset", (req, res) => {
   res.status(200).end(); // successful
 });
 
-//list the saved database
+//list database
 app.get("/", (req, res) => {
   let card_table = [];
   db.serialize(() => {

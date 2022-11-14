@@ -1,69 +1,41 @@
-1. Mkdir «foldername»
-2. Ni/touch «.gitignore» www.gitignore.io
-3. npm init
-4. npm install
-5. npm install body-parser
-6. npm install path
-7. npm install express
-8. npm install morgan
-9. npm install nodemon
-   npm install sqlite3
-
 # _Api_Stortinget_store_
-
-#### _{B}_
-
-#### By _**{List of contributors}**_
-
-## Technologies Used
-
-- _List all_
-- _the major technologies_
-- _you used in your project_
-- _here_
 
 ## Description
 
-_{This is a detailed description of your application. Give as much detail as needed to explain what the application does as well as any other information you want users or other developers to have.}_
+_This is a tracking system for Stortinget to build an API to support that the system will integrate between when items are added to the API and stored on cardID. See documentaion under_
 
-| Name         | Request type | Endpoint                                               | Body                                                                      |
-| ------------ | ------------ | ------------------------------------------------------ | ------------------------------------------------------------------------- |
-| Get All      | GET          | http://localhost:8080                                  |                                                                           |
-|              |              | ITEMS                                                  |                                                                           |
-| Add Items    | POST         | http://localhost:8080/items                            | { item:"string", value:"string", currency:"string", price:"number" }      |
-| Get Items    | GET          | http://localhost:8080/items                            |                                                                           |
-|              |              | CARD                                                   |                                                                           |
-| Add Card     | POST         | http://localhost:8080/card                             | { card_number:"number", store: "string", adress:"string", date:"string" } |
-| Get Card     | GET          | http://localhost:8080/card/:card_number                |                                                                           |
-|              |              | Card number/date/items                                 |                                                                           |
-| Get Data     | GET          | http://localhost:8080/day/:date                        |                                                                           |
-| Get Data     | GET          | http://localhost:8080/month/:month_number/:year_number |                                                                           |
-|              |              | Delete ALL data card                                   |                                                                           |
-| Delete Data  | DELETE       | http://localhost:8080/card/:card_number                |                                                                           |
-|              |              | CREATE / DROP / RESET TABLE                            |                                                                           |
-| Create table | GET          | http://localhost:8080/create                           |                                                                           |
-| Drop table   | GET          | http://localhost:8080/drop                             |                                                                           |
-| Reset table  | GET          | http://localhost:8080/reset                            |                                                                           |
+| Name         | Request type | Endpoint                                                       | Body                                                                      |
+| ------------ | ------------ | -------------------------------------------------------------- | ------------------------------------------------------------------------- |
+| Get All      | GET          | http://localhost:8080                                          |                                                                           |
+|              |              | ITEMS                                                          |                                                                           |
+| Add Items    | POST         | http://localhost:8080/items                                    | { item:"string", value:"string", currency:"string", price:"number" }      |
+| Get Items    | GET          | http://localhost:8080/items                                    |                                                                           |
+|              |              | CARD                                                           |                                                                           |
+| Add Card     | POST         | http://localhost:8080/card                                     | { card_number:"number", store: "string", adress:"string", date:"string" } |
+| Get Card     | GET          | http://localhost:8080/card/:card_number                        |                                                                           |
+|              |              | Card number/date/items                                         |                                                                           |
+| Get Data     | GET          | http://localhost:8080/day/:date                                |                                                                           |
+| Get Data     | GET          | http://localhost:8080/month/:month_number/:year_number         |                                                                           |
+|              |              | Delete ALL data card                                           |                                                                           |
+| Delete Data  | DELETE       | http://localhost:8080/card/:card_number                        |                                                                           |
+|              |              | CREATE / DROP / RESET TABLE                                    |                                                                           |
+| Create table | GET          | http://localhost:8080/create                                   |                                                                           |
+| Drop table   | GET          | http://localhost:8080/drop                                     |                                                                           |
+| Reset table  | GET          | http://localhost:8080/reset (drop and insert data to database) |                                                                           |
 
 ## Setup/Installation Requirements
 
-- _This is a great place_
-- _to list setup instructions_
-- _in a simple_
-- _easy-to-understand_
-- _format_
-
-_{Leave nothing to chance! You want it to be easy for potential users, employers and collaborators to run your app. Do I need to run a server? How should I set up my databases? Is there other code this application depends on? We recommend deleting the project from your desktop, re-cloning the project from GitHub, and writing down all the steps necessary to get the project working again.}_
-
-## Known Bugs
-
-- _Any known issues_
-- _should go here_
-
-## License
-
-_{Let people know what to do if they run into any issues or have questions, ideas or concerns. Encourage them to contact you or make a contribution to the code.}_
+- _Mkdir «foldername»_
+- _touch «.gitignore» www.gitignore.io_
+- _npm init_
+- _npm install_
+- _npm install body-parser_
+- _npm install path_
+- _npm install express_
+- _npm install morgan_
+- _npm install nodemon_
+- _npm install sqlite3_
 
 ## Contact Information
 
-_{Add your contact information here.}_
+_Bjørn Are Nielsen - GIT: ctc301_
