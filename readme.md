@@ -14,6 +14,7 @@ _This is a tracking system for Stortinget to build an API to support that the sy
 | ------------ | ------------ | -------------------------------------------------------------- | ------------------------------------------------------------------------- |
 | Get All      | GET          | http://localhost:8080                                          |                                                                           |
 |              |              | ITEMS                                                          |                                                                           |
+| ------------ | ------------ | -------------------------------------------------------------- | ------------------------------------------------------------------------- |
 | Add Items    | POST         | http://localhost:8080/items                                    | { item:"string", value:"string", currency:"string", price:"number" }      |
 | Get Items    | GET          | http://localhost:8080/items                                    |                                                                           |
 |              |              | CARD                                                           |                                                                           |
@@ -44,4 +45,4 @@ _This is a tracking system for Stortinget to build an API to support that the sy
 
 ## Contact Information
 
-_Bjørn Are Nielsen - GIT: ctc301_
+_Bjørn Are Nielsen - Github: ctc301_

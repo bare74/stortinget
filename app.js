@@ -1,3 +1,9 @@
+/**  
+*
+This is the main entry endpoint to my application
+*
+*/
+
 const morgan = require("morgan");
 const express = require("express");
 const sqlite3 = require("sqlite3");
@@ -69,13 +75,22 @@ app.get("/", (req, res) => {
 });
 
 let itemcard = [];
+let category = [
+  "Beverages",
+  "Bread/Bakery",
+  "Canned/Jarred Goods",
+  "Dry/Baking Goods",
+  "Frozen Foods",
+  "Meat",
+  "Produce",
+  "Cleaners",
+];
 
 //add items
 app.post("/items", (req, res) => {
   let items = {
-    item: req.body.item,
-    value: req.body.value,
-    currency: req.body.currency,
+    name: req.body.name,
+    category: `${category}`,
     price: req.body.price,
   };
 
@@ -122,7 +137,8 @@ app.get("/card/:card_number", (req, res) => {
   let card_number = [];
   db.serialize(() => {
     db.each(
-      `SELECT * FROM card_table WHERE card_number = ${req.params.card_number}`,
+      "SELECT * FROM card_table WHERE card_number = ?",
+      req.params.card_number,
       (err, row) => {
         card_number.push(row.items);
         if (err) return console.log(err.message);
@@ -139,7 +155,8 @@ app.get("/day/:date", (req, res) => {
   let date = [];
   db.serialize(() => {
     db.each(
-      `SELECT * FROM card_table WHERE date = "${req.params.date}"`,
+      "SELECT * FROM card_table WHERE date = ?",
+      req.params.date,
       (err, row) => {
         date.push(row.card_number, row.date, row.items);
         if (err) return console.log(err.message);
@@ -162,7 +179,8 @@ app.get("/month/:month_number/:year_number", (req, res) => {
 
   db.serialize(() => {
     db.each(
-      `SELECT * FROM card_table WHERE substr(date, 4, 8)= "${monthYear}"`,
+      "SELECT * FROM card_table WHERE substr(date, 4, 8) = ?",
+      monthYear,
       (err, row) => {
         sortMonthYear.push(row.card_number, row.date, row.items);
         if (err) return console.log(err.message);
