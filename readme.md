@@ -14,7 +14,6 @@ _This is a tracking system for Stortinget to build an API to support that the sy
 | ------------ | ------------ | -------------------------------------------------------------- | ------------------------------------------------------------------------- |
 | Get All      | GET          | http://localhost:8080                                          |                                                                           |
 |              |              | ITEMS                                                          |                                                                           |
-| ------------ | ------------ | -------------------------------------------------------------- | ------------------------------------------------------------------------- |
 | Add Items    | POST         | http://localhost:8080/items                                    | { item:"string", value:"string", currency:"string", price:"number" }      |
 | Get Items    | GET          | http://localhost:8080/items                                    |                                                                           |
 |              |              | CARD                                                           |                                                                           |
