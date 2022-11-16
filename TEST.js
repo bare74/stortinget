@@ -19,20 +19,42 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 //create new database
 const db = new sqlite3.Database(__dirname + "/stortinget.database.sqlite");
+const dbp = new sqlite3.Database(__dirname + "/product.database.sqlite");
+// const itemsdb = new sqlite3.Database(":memory:");
+// let itemsdb = new sqlite3.Database(":memory:", (err) => {
+//   if (err) {
+//     return console.error(err.message);
+//   }
+//   console.log("Connected to the in-memory SQlite database.");
+// });
+
+// console.log(itemsdb);
+// db.close((err) => {
+//   if (err) {
+//     return console.error(err.message);
+//   }
+//   console.log("Close the database connection.");
+// });
 
 const CREATE_CARD_TABLE =
   "CREATE TABLE if not exists card_table (ID INTEGER PRIMARY KEY AUTOINCREMENT, card_number INT, store TEXT, adress TEXT, date TEXT, items TEXT);";
 const DROP_CARD_TABLE = "DROP TABLE if exists card_table;";
+const CREATE_PRODUCT_TABLE =
+  "CREATE TABLE if not exists product_table (ID INTEGER PRIMARY KEY AUTOINCREMENT, name TEXT, category TEXT,price INT);";
+const DROP_PRODUCT_TABLE = "DROP TABLE if exists card_table;";
 
 //create new table
 app.get("/create", (req, res) => {
   db.run(CREATE_CARD_TABLE);
+  dbp.run(CREATE_PRODUCT_TABLE);
+
   res.send("Table created");
 });
 
 //drop table
 app.get("/drop", (req, res) => {
   db.run(DROP_CARD_TABLE);
+  dbp.run(DROP_PRODUCT_TABLE);
   res.send("Table dropped");
 });
 
@@ -43,13 +65,28 @@ app.get("/reset", (req, res) => {
     db.run(CREATE_CARD_TABLE, () => {
       console.log("...and re-created");
       db.run(
-        "INSERT INTO card_table (card_number, store, adress, date, items) VALUES ('1345', 'Kiwi', 'Tønsberg', '12.11.22', '');"
+        "INSERT INTO card_table (card_number, store, adress, date, items) VALUES ('1345', 'Kiwi', 'Tønsberg', '12.11.22', '1');"
       );
       db.run(
-        "INSERT INTO card_table (card_number, store, adress, date, items) VALUES ('1343', 'Rema 1000', 'Tønsberg', '10.11.22', '');"
+        "INSERT INTO card_table (card_number, store, adress, date, items) VALUES ('1343', 'Rema 1000', 'Tønsberg', '10.11.22', '2');"
       );
       db.run(
-        "INSERT INTO card_table (card_number, store, adress, date, items) VALUES ('7890', 'Kiwi', 'Sandefjord', '12.11.22', '');"
+        "INSERT INTO card_table (card_number, store, adress, date, items) VALUES ('7890', 'Kiwi', 'Sandefjord', '12.11.22', '3');"
+      );
+    });
+  });
+  dbp.run(DROP_PRODUCT_TABLE, () => {
+    console.log("Table product dropped ...");
+    dbp.run(CREATE_PRODUCT_TABLE, () => {
+      console.log("...and re-created");
+      dbp.run(
+        "INSERT INTO product_table (name, category, price) VALUES ('Eggs', 'Diary', '29');"
+      );
+      dbp.run(
+        "INSERT INTO product_table (name, category, price) VALUES ('Eggs', 'Diary', '29');"
+      );
+      dbp.run(
+        "INSERT INTO product_table (name, category, price) VALUES ('Eggs', 'Diary', '29');"
       );
     });
   });
@@ -62,9 +99,13 @@ app.get("/", (req, res) => {
   let card_table = [];
   db.serialize(() => {
     db.each(
-      "SELECT * FROM card_table",
+      "SELECT items, name FROM card_table INNER JOIN product_table on product_table.ID = card_table.ID",
+      // "SELECT * FROM card_table",
+      // "SELECT name FROM product_table INNER JOIN card_table ON product_table.name = card_table.items",
+      // "SELECT card_table.card_number AS card_number, product_table.name AS items FROM card_table RIGHT JOIN products ON card_table.items = porduct_table.id",
       (err, row) => {
         card_table.push(row);
+        console.log(card_table);
         if (err) return console.log(err.message);
       },
       () => {
