@@ -2,7 +2,7 @@
 
 ## Description
 
-_This is a tracking system for Stortinget to build an API to support that the system will integrate between when items are added to the API and stored on cardID. See documentation under_
+_This is a tracking system for Stortinget to build an API to support that the system will integrate between when items are added to the API and stored on cardID. With several endpoints See documentation under_
 
 ## HTTP Methods
 
@@ -22,6 +22,8 @@ _This is a tracking system for Stortinget to build an API to support that the sy
 |              |              | Card number/date/items                                         |                                                                           |
 | Get Data     | GET          | http://localhost:8080/day/:date                                |                                                                           |
 | Get Data     | GET          | http://localhost:8080/month/:month_number/:year_number         |                                                                           |
+|              |              | STORE                                                          |                                                                           |
+| Get Data     | GET          | http://localhost:8080/store/:store                             |                                                                           |
 |              |              | Delete ALL data card                                           |                                                                           |
 | Delete Data  | DELETE       | http://localhost:8080/card/:card_number                        |                                                                           |
 |              |              | CREATE / DROP / RESET TABLE                                    |                                                                           |
@@ -58,4 +60,4 @@ _This is a tracking system for Stortinget to build an API to support that the sy
 
 ## Contact Information
 
-_Bjørn Nielsen - Github: ctc301_
+_Bjørn Nielsen_

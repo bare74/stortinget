@@ -97,7 +97,7 @@ app.post("/items", (req, res) => {
     res.status(201).end(); // successful post
   } else {
     res.send("Choose a category");
-    res.status(404).end(); // Not found
+    res.status(404).end(); // Not found category
   }
 });
 
@@ -147,6 +147,23 @@ app.get("/card/:card_number", (req, res) => {
       },
       () => {
         res.send(JSON.parse(card_number));
+      }
+    );
+  });
+});
+
+app.get("/store/:store", (req, res) => {
+  let store = [];
+  db.serialize(() => {
+    db.each(
+      "SELECT * FROM card_table WHERE store = ?",
+      req.params.store,
+      (err, row) => {
+        store.push(row);
+        if (err) return console.log(err.message);
+      },
+      () => {
+        res.send(store);
       }
     );
   });
