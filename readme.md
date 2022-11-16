@@ -42,7 +42,19 @@ _This is a tracking system for Stortinget to build an API to support that the sy
 - _npm install sqlite3_
 - _npm install nodemon_
 
--_npm init - is a convenient way of scaffolding your package json you may need to run it everytime you are starting a new project_ -_npm install - installs your dependencies in node modules folder. You may need to run this everytime you manually add a dependency to your package_ -_Morgan - This is a great tool that logs the requests along with some other information depending upon its configuration and the preset used. It proves to be very helpful while debugging and also if you want to create Log files_ -_Body-parser - Responsible for parsing the incoming request bodies in a middleware before you handle it, that usually helps when you need to know more than just the URL being hit_ -_Express - It is used to build a single page, multipage, and hybrid web application helps us complete these transactions by helpfully augmenting the built in Request and Response objects that the Node. js core http module provides when a request is received by your server_ -_sqlite3 - is a relational database. The details related to a database is stored in a file. Copying a database from one machine to another is just a file with no complex commands or anything_ -_nodemon - is a tool that helps develop Node. js based applications by automatically restarting the node application when file changes in the directory are detected_
+-_npm init - is a convenient way of scaffolding your package json you may need to run it everytime you are starting a new project_
+
+-_npm install - installs your dependencies in node modules folder. You may need to run this everytime you manually add a dependency to your package_
+
+-_Morgan - This is a great tool that logs the requests along with some other information depending upon its configuration and the preset used. It proves to be very helpful while debugging and also if you want to create Log files_
+
+-_Body-parser - Responsible for parsing the incoming request bodies in a middleware before you handle it, that usually helps when you need to know more than just the URL being hit_
+
+-_Express - It is used to build a single page, multipage, and hybrid web application helps us complete these transactions by helpfully augmenting the built in Request and Response objects that the Node. js core http module provides when a request is received by your server_
+
+-_sqlite3 - is a relational database. The details related to a database is stored in a file. Copying a database from one machine to another is just a file with no complex commands or anything_
+
+-_nodemon - is a tool that helps develop Node. js based applications by automatically restarting the node application when file changes in the directory are detected_
 
 ## Contact Information
 
