@@ -63,4 +63,4 @@ _This is a tracking system for Stortinget to build an API to support that the sy
 
 ## Contact Information
 
-_Bjørn Nielsen_![image](https://github.com/bare74.png)
+_Bjørn Nielsen_
