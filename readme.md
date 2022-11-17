@@ -38,7 +38,8 @@ _This is a tracking system for Stortinget to build an API to support that the sy
 ## Setup/Installation Requirements
 
 - _Mkdir «foldername»_
-- _touch «.gitignore» www.gitignore.io_
+- _touch .gitignore_
+- _www.gitignore.io_
 - _touch app.js_
 - _git init_
 - _npm init_
