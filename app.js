@@ -128,8 +128,7 @@ app.post("/card", (req, res) => {
     function (err) {
       if (err) throw err;
       res.send("Items added to card");
-      res.status(201).end(); // successful post
-      itemcard = []; //clear array
+      res.status(200).end(); // successful post
     }
   );
 });
@@ -146,12 +145,13 @@ app.get("/card/:card_number", (req, res) => {
         if (err) return console.log(err.message);
       },
       () => {
-        res.send(JSON.parse(card_number));
+        res.send(card_number);
       }
     );
   });
 });
 
+//search for saved store
 app.get("/store/:store", (req, res) => {
   let store = [];
   db.serialize(() => {
