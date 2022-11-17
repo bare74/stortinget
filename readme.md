@@ -67,4 +67,4 @@ _This is a tracking system for Stortinget to build an API to support that the sy
 
 ## Contact Information
 
-_Bjørn Nielsen_
+_Bjørn A. Nielsen_
