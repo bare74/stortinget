@@ -94,7 +94,7 @@ app.post("/items", (req, res) => {
   if (categorys.includes(category) || category === "") {
     itemcard.push(items);
     res.send("Items added");
-    res.status(201).end(); // successful post
+    res.status(200).end(); // successful post
   } else {
     res.send("Choose a category");
     res.status(404).end(); // Not found category
