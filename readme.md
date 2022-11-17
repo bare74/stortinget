@@ -1,7 +1,5 @@
 # Api_Stortinget
 
-================
-
 ## Description
 
 _This is a tracking system for Stortinget to build an API to support that the system will integrate between when items are added to the API and stored on cardID. With several endpoints See documentation under_
