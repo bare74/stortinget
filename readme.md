@@ -63,5 +63,4 @@ _This is a tracking system for Stortinget to build an API to support that the sy
 
 ## Contact Information
 
-_Bjørn Nielsen_![alt text](https://avatars.githubusercontent.com/u/82520963?v=4 "Logo Title Text 1")
-![image](https://your-image-url.type)
+_Bjørn Nielsen_![image](https://github.com/ctc301.png)
