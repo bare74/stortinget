@@ -2,7 +2,7 @@
   <img src="https://media.giphy.com/media/M9gbBd9nbDrOTu1Mqx/giphy.gif" width="100"/>
 </div>
 
-# Api_Stortinget
+# Api Stortinget
 
 ## Description
 
@@ -10,8 +10,7 @@ _This is a tracking system for Stortinget to build an API to support that the sy
 
 ## HTTP Methods
 
-> _GET - Requests retrieve resource information_
-
+- _GET - Requests retrieve resource information_
 - _POST - The server creates a new entry in a database_
 - _DELETE - Deletes resource_
 
