@@ -3,9 +3,10 @@
 This is the main entry endpoint to my application
 *
 */
-
 const morgan = require("morgan");
 const express = require("express");
+
+//requiring the sqlite3 module
 const sqlite3 = require("sqlite3");
 
 const bodyParser = require("body-parser");
@@ -17,7 +18,7 @@ app.use(morgan("dev"));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
-//create new database
+//create a database file
 const db = new sqlite3.Database(__dirname + "/stortinget.database.sqlite");
 
 const CREATE_CARD_TABLE =
